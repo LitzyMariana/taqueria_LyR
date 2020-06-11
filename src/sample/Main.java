@@ -4,15 +4,45 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    Scene escena;
+    Label lblLogin;
+    TextField txtUsusario, txtContraseña;
+    VBox vLogin;
+    Button btnIngresar;
+    BorderPane brpPrincipal;
+
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hola esta es nuestra taqueria");
-        primaryStage.setScene(new Scene(root, 300, 275));
+
+        lblLogin = new Label("LOGIN");
+        txtUsusario = new TextField();
+        txtContraseña = new TextField();
+        btnIngresar = new Button("INGRESAR");
+
+        vLogin = new VBox();
+        vLogin.setSpacing(5);
+        vLogin.getChildren().addAll(lblLogin, txtUsusario,txtContraseña,btnIngresar);
+
+        brpPrincipal = new BorderPane();
+        brpPrincipal.setCenter(vLogin);
+
+        escena = new Scene(brpPrincipal,300,275);
+        primaryStage.setMaximized(true);
+        //titulo de la ventana
+        primaryStage.setTitle("Taqueria Litzy y Rodrigo");
+        //root jala contenidoo de xml para mostrar contenido, se remplaza con el boton, solo recive un contenedor padre
+        primaryStage.setScene(escena);
+        //para visualizar
         primaryStage.show();
     }
 
