@@ -44,6 +44,8 @@ public class Main extends Application {
         primaryStage.setMaximized(true);
         //titulo de la ventana
         primaryStage.setTitle("Taqueria Litzy y Rodrigo");
+        //creamos la conwxion a la bd
+        conexion.crearConexion();
         //root jala contenidoo de xml para mostrar contenido, se remplaza con el boton, solo recive un contenedor padre
         primaryStage.setScene(escena);
         //para visualizar
