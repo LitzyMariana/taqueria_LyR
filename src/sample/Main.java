@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import sample.vistas.adminPrincipal;
 
 public class Main extends Application {
 
@@ -36,6 +37,9 @@ public class Main extends Application {
         brpPrincipal = new BorderPane();
         brpPrincipal.setCenter(vLogin);
 
+        btnIngresar = new Button();
+        btnIngresar.setOnAction(event -> ingresar());
+
         escena = new Scene(brpPrincipal,300,275);
         primaryStage.setMaximized(true);
         //titulo de la ventana
@@ -44,6 +48,10 @@ public class Main extends Application {
         primaryStage.setScene(escena);
         //para visualizar
         primaryStage.show();
+    }
+
+    private void ingresar(){
+        new adminPrincipal();
     }
 
 
