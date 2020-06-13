@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -15,24 +16,27 @@ import sample.vistas.adminPrincipal;
 public class Main extends Application {
 
     Scene escena;
-    Label lblLogin;
+    Label lblLogin, lblSelecciona;
     TextField txtUsusario, txtContraseña;
     VBox vLogin;
     Button btnIngresar;
     BorderPane brpPrincipal;
+    ComboBox cmbRoles;
 
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
         lblLogin = new Label("LOGIN");
+        lblSelecciona = new Label("Seleccina el rol");
+        cmbRoles = new ComboBox();
         txtUsusario = new TextField();
         txtContraseña = new TextField();
         btnIngresar = new Button("INGRESAR");
 
         vLogin = new VBox();
         vLogin.setSpacing(5);
-        vLogin.getChildren().addAll(lblLogin, txtUsusario,txtContraseña,btnIngresar);
+        vLogin.getChildren().addAll(lblLogin,lblSelecciona, cmbRoles, txtUsusario,txtContraseña,btnIngresar);
 
         brpPrincipal = new BorderPane();
         brpPrincipal.setCenter(vLogin);
