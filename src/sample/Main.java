@@ -44,8 +44,8 @@ public class Main extends Application {
         btnIngresar = new Button();
         btnIngresar.setOnAction(event -> ingresar());
 
-        escena = new Scene(brpPrincipal,300,275);
-        primaryStage.setMaximized(true);
+        escena = new Scene(brpPrincipal,200,200);
+        //primaryStage.setMaximized(true);
         //titulo de la ventana
         primaryStage.setTitle("Taqueria Litzy y Rodrigo");
         //creamos la conwxion a la bd
@@ -58,6 +58,7 @@ public class Main extends Application {
 
     private void ingresar(){
         new adminPrincipal();
+
     }
 
 
